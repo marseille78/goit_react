@@ -25,6 +25,8 @@
 - [Пакет prop-types](https://www.npmjs.com/package/prop-types)
 - Свойство `propTypes`
 - Работа с коллекциями, ключи
+  - [uuid](https://www.npmjs.com/package/uuid)
+  - [nanoid](https://www.npmjs.com/package/nanoid)
 - Основы композиции компонентов, потомки (props.children). Делаем панель.
 - [Строгий режим](https://ru.reactjs.org/docs/strict-mode.html)
 
