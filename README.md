@@ -4,6 +4,8 @@
 - [date-fns](https://date-fns.org/)
 - [prop-types](https://www.npmjs.com/package/prop-types)
 - [clsx](https://www.npmjs.com/package/clsx)
+- [emotion](https://emotion.sh/docs/introduction)
+- [styled-components](https://styled-components.com/)
 
 ## Components
 

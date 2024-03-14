@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import Event from 'components/Event';
+import { Block } from './EventBoard.styled';
 
-import css from "./EventBoard.module.css";
 
 const EventBoard = ({ events }) => {
     return (
-        <div className={css.eventBoard}>
+        <Block data-cmp="EventBoard">
             {
                 events.map(({name, location, speaker, type, time}) => (
                     <Event
@@ -19,13 +19,13 @@ const EventBoard = ({ events }) => {
                     />
                 ))
             }
-        </div>
+        </Block>
     );
 };
 
 EventBoard.propTypes = {
     events: PropTypes.arrayOf(PropTypes.shape({
-        key: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
     }),),
 };
 
