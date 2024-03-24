@@ -1,30 +1,33 @@
+import PropTypes from 'prop-types'
+
 import { Block, Item, ItemLabel, ItemPercentage, List, Title } from "./Statistics.styled";
 
-const Statistics = () => {
+const Statistics = ({title, stats=[]}) => {
     return (
         <Block data-cmp="Statistics">
-            <Title>Upload stats</Title>
+            <Title>{title}</Title>
 
             <List>
-                <Item>
-                    <ItemLabel>.docx</ItemLabel>
-                    <ItemPercentage>4%</ItemPercentage>
-                </Item>
-                <Item>
-                    <ItemLabel>.mp3</ItemLabel>
-                    <ItemPercentage>14%</ItemPercentage>
-                </Item>
-                <Item>
-                    <ItemLabel>.pdf</ItemLabel>
-                    <ItemPercentage>41%</ItemPercentage>
-                </Item>
-                <Item>
-                    <ItemLabel>.mp4</ItemLabel>
-                    <ItemPercentage>12%</ItemPercentage>
-                </Item>
+                {
+                    stats.map(({id, label, percentage}) =>  (
+                        <Item key={id}>
+                            <ItemLabel>{label}</ItemLabel>
+                            <ItemPercentage>{percentage}</ItemPercentage>
+                        </Item>
+                    ))
+                }
             </List>
         </Block>
     );
+};
+
+Statistics.propTypes = {
+    title: PropTypes.string.isRequired,
+    stats: PropTypes.arrayOf(PropTypes.exact({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        percentage: PropTypes.number.isRequired,
+    })),
 };
 
 export default Statistics;
