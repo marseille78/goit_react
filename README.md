@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Пакети
 
-## Available Scripts
+- [prop-types](https://www.npmjs.com/package/prop-types) - Перевірка типів пропсів
+- [Create React App](https://create-react-app.dev/)
+- [uuid](https://www.npmjs.com/package/uuid) - Унікальний ID
+- [nanoid](https://www.npmjs.com/package/nanoid) - Унікальний ID
+- [react-icons](https://react-icons.github.io/react-icons/) - Іконкі для React
+- [date-fns](https://date-fns.org/) - Форматування дат
+- [clsx](https://www.npmjs.com/package/clsx) - Динамічні класи
+- [emotion](https://emotion.sh/docs/introduction) - CSS in JS
+- [styled-components](https://styled-components.com/) - CSS in JS
 
-In the project directory, you can run:
+## 1. Модуль 1 Компоненти та колекції. Стилізація
 
-### `npm start`
+### Матеріали
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Обов'язкові матеріали курсу
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [1 - Компоненты и коллекции (теория)](https://www.youtube.com/watch?v=jy7ElyM6m7I)
+- [2 - Компоненты и стилизация (практика)](https://www.youtube.com/watch?v=XRs3v6pNOH8)
+- [3 - Библиотека Emotion (стилизация)](https://www.youtube.com/watch?v=S9-zFqxeEr8)
+- [Посилання на конспект в режимі оффлайн](https://textbook.edu.goit.global/react-zr7b4k-pwa/v1/uk/docs/lesson-01/web-apps/)
+- [Модуль 1 Заняття 1](https://www.youtube.com/watch?v=2OAcJ99XCeE)
+- [Модуль 1 Заняття 2 (Алієв-Ломач)](https://www.youtube.com/watch?v=Vq1RAsifycE)
 
-### `npm test`
+#### Додані користувачами
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [По лекции react_40 Норец Максим `Олена Мiхайлова`](https://github.com/Karlsoninit/online_react_40)
+- [Настройка pre-commit хуков `Анна Цісар`](https://github.com/goitacademy/react-lint-staged-workshop)
+- [Репозиторій з кодом заняття 01.08.2022 `Валерія Таран`](https://github.com/luxplanjay/react-48/tree/01-components/src)
+- [Theme Specification `Валерія Таран`](https://theme-ui.com/theme-spec)
+- [Знакомство с MPA/SPA, SSR/CSR - отличия, недостатки `Євгеній Позняк`](https://www.youtube.com/watch?v=0zQPQztuWto)
+- [Styled System сайт `Олег Аргунов`](https://github.com/styled-system/styled-system)
 
-### `npm run build`
+### Уроки
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Урок Модуль 1 Компоненти та колекції. Стилізація](https://www.youtube.com/watch?v=K2lRylU8TYA)
+- [Урок Модуль 1 Компоненти та колекції. Стилізація](https://www.youtube.com/watch?v=4agLRSRL3og)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 2. Модуль 2 Події та стан. Форми
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Матеріали
 
-### `npm run eject`
+#### Обов'язкові матеріали курсу
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [1 - События и состояние](https://www.youtube.com/watch?v=nLdbvJ5KVQw)
+- [2 - Формы](https://www.youtube.com/watch?v=80l5dUxKQLo)
+- [3 - Библиотеки Formik и Yup](https://www.youtube.com/watch?v=hZNiA0CE7qw)
+- [Модуль 2 Заняття 1 (Алієв-Ломач)](https://www.youtube.com/watch?v=sJ630cmuyyg)
+- [Модуль 2 Заняття 2 (Алієв-Ломач)](https://www.youtube.com/watch?v=3xrm9oOgZ1c)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Додані користувачами
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [Checkboxes in React 16 `Тарас Бондар`](https://react.tips/checkboxes-in-react-16/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Уроки
