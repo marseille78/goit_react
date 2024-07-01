@@ -56,3 +56,8 @@
 - [Checkboxes in React 16 `Тарас Бондар`](https://react.tips/checkboxes-in-react-16/)
 
 ### Уроки
+
+- [Урок Модуль 2 Події та стан. Форми](https://www.youtube.com/watch?v=iZN3U4I9nS4)
+- [Урок Модуль 2 Події та стан. Форми](https://www.youtube.com/watch?v=0H8mT3oh08U)
+- [Практика Модуль 2 Події та стан. Форми](https://www.youtube.com/watch?v=6wIdhzm4prg)
+- [Практика Модуль 2 Події та стан. Форми](https://www.youtube.com/watch?v=i56Dkw3kjIs)
