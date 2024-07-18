@@ -1,53 +1,40 @@
-import { Component } from "react";
-
-import "./ColorPicker.css";
+import React, { Component } from 'react';
+import classNames from 'classnames';
+import './ColorPicker.css';
 
 class ColorPicker extends Component {
   state = {
-    activeOptionId: 0,
+    activeOptionIdx: 0,
   };
 
-  setActiveIdx = (index) => {
-    this.setState({ activeOptionId: index });
+  setActiveIdx = index => {
+    this.setState({ activeOptionIdx: index });
   };
 
-  makeOptionsClassNames = (index) => {
-    const { activeOptionId } = this.state;
-    const optionClasses = ["ColorPicker__option"];
-
-    if (index === activeOptionId) {
-      optionClasses.push("ColorPicker__option--active");
-    }
-
-    return optionClasses.join(" ");
+  makeOptionClassName = index => {
+    return classNames('ColorPicker__option', {
+      'ColorPicker__option--active': index === this.state.activeOptionIdx,
+    });
   };
 
   render() {
+    const { activeOptionIdx } = this.state;
     const { options } = this.props;
-    const { activeOptionId } = this.state;
-
-    const { label } = options[activeOptionId];
+    const { label } = options[activeOptionIdx];
 
     return (
       <div className="ColorPicker">
         <h2 className="ColorPicker__title">Color Picker</h2>
-
         <p>Выбран цвет: {label}</p>
-
         <div>
-          {options.map(({ label, color }, idx) => {
-            return (
-              <button
-                key={label}
-                className={this.makeOptionsClassNames(idx)}
-                type="button"
-                onClick={() => this.setActiveIdx(idx)}
-                style={{
-                  backgroundColor: color,
-                }}
-              ></button>
-            );
-          })}
+          {options.map(({ label, color }, index) => (
+            <button
+              key={label}
+              className={this.makeOptionClassName(index)}
+              style={{ backgroundColor: color }}
+              onClick={() => this.setActiveIdx(index)}
+            ></button>
+          ))}
         </div>
       </div>
     );
