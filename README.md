@@ -9,8 +9,17 @@
 - [react-icons](https://react-icons.github.io/react-icons/) - Іконкі для React
 - [date-fns](https://date-fns.org/) - Форматування дат
 - [clsx](https://www.npmjs.com/package/clsx) - Динамічні класи
+- [classnames](https://www.npmjs.com/package/classnames) - Динамічні класи
 - [emotion](https://emotion.sh/docs/introduction) - CSS in JS
 - [styled-components](https://styled-components.com/) - CSS in JS
+- [sass](https://www.npmjs.com/package/sass) - Для роботи з SASS
+- [yup](https://www.npmjs.com/package/yup) - Валідація форм
+- [react-hook-form](https://react-hook-form.com/) - Конструктор форм
+- [formik](https://formik.org/) - Конструктор форм
+
+## Інші корисні ресурсі
+
+- [bundlephobia](https://bundlephobia.com/) - Перевірка пакетів на вагу
 
 ## 1. Модуль 1 Компоненти та колекції. Стилізація
 
