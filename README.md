@@ -16,6 +16,7 @@
 - [yup](https://www.npmjs.com/package/yup) - Валідація форм
 - [react-hook-form](https://react-hook-form.com/) - Конструктор форм
 - [formik](https://formik.org/) - Конструктор форм
+- [react-player](https://www.npmjs.com/package/react-player) - Відеоплеєр
 
 ## Інші корисні ресурсі
 
