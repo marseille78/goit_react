@@ -17,6 +17,7 @@
 - [react-hook-form](https://react-hook-form.com/) - Конструктор форм
 - [formik](https://formik.org/) - Конструктор форм
 - [react-player](https://www.npmjs.com/package/react-player) - Відеоплеєр
+- [react-toastify](https://www.npmjs.com/package/react-toastify) - Нотифікатор
 
 ## Інші корисні ресурсі
 
