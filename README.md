@@ -13,15 +13,18 @@
 - [emotion](https://emotion.sh/docs/introduction) - CSS in JS
 - [styled-components](https://styled-components.com/) - CSS in JS
 - [sass](https://www.npmjs.com/package/sass) - Для роботи з SASS
+- [normalize.css]
 - [yup](https://www.npmjs.com/package/yup) - Валідація форм
 - [react-hook-form](https://react-hook-form.com/) - Конструктор форм
 - [formik](https://formik.org/) - Конструктор форм
 - [react-player](https://www.npmjs.com/package/react-player) - Відеоплеєр
 - [react-toastify](https://www.npmjs.com/package/react-toastify) - Нотифікатор
+- [axios]
 
 ## Інші корисні ресурсі
 
 - [bundlephobia](https://bundlephobia.com/) - Перевірка пакетів на вагу
+- [pixabay.com](https://pixabay.com/api/docs/) - Пошук зображень в інтернеті
 
 ## 1. Модуль 1 Компоненти та колекції. Стилізація
 
