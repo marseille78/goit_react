@@ -19,7 +19,9 @@
 - [formik](https://formik.org/) - Конструктор форм
 - [react-player](https://www.npmjs.com/package/react-player) - Відеоплеєр
 - [react-toastify](https://www.npmjs.com/package/react-toastify) - Нотифікатор
+- [react-hot-toast](https://react-hot-toast.com/) - Нотифікатор
 - [axios]
+- [basicLightbox](https://www.npmjs.com/package/basiclightbox) - LightBox
 
 ## Інші корисні ресурсі
 
