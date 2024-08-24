@@ -95,7 +95,7 @@ class FormLogin extends Component {
 						onChange={this.handleRadio}
 						value='male'
 					/>
-					<label className='form-check-label' htmlFor='flexRadioDefault1'>
+					<label className='form-check-label' for='flexRadioDefault1'>
 						Male
 					</label>
 				</div>
@@ -109,7 +109,7 @@ class FormLogin extends Component {
 						onChange={this.handleRadio}
 						value='female'
 					/>
-					<label className='form-check-label' htmlFor='flexRadioDefault2'>
+					<label className='form-check-label' for='flexRadioDefault2'>
 						Female
 					</label>
 				</div>
