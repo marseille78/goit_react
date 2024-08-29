@@ -1,67 +1,58 @@
-import { Component } from "react";
+import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import ContactForm from "../ContactForm";
 import Filter from "../Filter";
 import ContactList from "../ContactList";
 
-class App extends Component {
-  state = {
-    contacts: [],
-    filter: "",
-    existContact: false,
-  };
+const App = () => {
+  const [contacts, setContacts] = useState([]);
+  const [filter, setFilter] = useState("");
+  const [existContact, setExistContact] = useState(false);
 
-  componentDidMount = () => {
+  useEffect(() => {
     const startContacts = localStorage.getItem("bookContacts");
-
+  
     if (startContacts) {
-      this.setState({ contacts: JSON.parse(startContacts) });
+      setContacts(JSON.parse(startContacts));
     }
-  };
+  }, []);
 
-  componentDidUpdate = (_, prevState) => {
-    if (prevState.contacts !== this.state.contacts) {
-      localStorage.setItem("bookContacts", JSON.stringify(this.state.contacts));
-    }
-  };
+  useEffect(() => {
+    localStorage.setItem("bookContacts", JSON.stringify(contacts));
+  }, [contacts]);
 
-  getVisibleContacts = () => {
-    const { contacts, filter } = this.state;
-
+  const getVisibleContacts = () => {
     return filter.trim().length === 0
       ? contacts
       : contacts.filter(({ name }) => name.toLowerCase().search(filter) !== -1);
   };
 
-  changeFilter = (filter) => {
-    this.setState({ filter });
+  const changeFilter = (filterString) => {
+    setFilter(filterString);
   };
 
-  addContact = ({ name, number }) => {
+  const addContact = ({ name, number }) => {
     const newContact = { name, number, id: nanoid() };
 
-    if (this.checkExistContact(name)) {
-      this.setState({ existContact: true });
+    if (checkExistContact(name)) {
+      setExistContact(true);
       return;
     } else {
-      this.setState({ existContact: false });
+      setExistContact(false);
     }
 
-    this.setState({ contacts: [newContact, ...this.state.contacts] });
+    setContacts(stateContacts => [newContact, ...stateContacts]);
   };
 
-  checkExistContact = (newName) => {
-    if (this.state.contacts.find(({ name }) => name === newName)) {
+  const checkExistContact = (newName) => {
+    if (contacts.find(({ name }) => name === newName)) {
       return true;
     }
     return false;
   };
 
-  render() {
-    const { existContact } = this.state;
-
-    return (
-      <div className="container">
+  return (
+    <div className="container">
         <div className="row">
           <div className="col">
             <h1>Phonebook</h1>
@@ -70,7 +61,7 @@ class App extends Component {
         <div className="row mb-3">
           <div className="col">
             <ContactForm
-              addContact={this.addContact}
+              addContact={addContact}
               existContact={existContact}
             />
           </div>
@@ -82,17 +73,16 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col">
-            <Filter changeFilter={this.changeFilter} />
+            <Filter changeFilter={changeFilter} />
           </div>
         </div>
         <div className="row">
           <div className="col">
-            <ContactList visibleContacts={this.getVisibleContacts()} />
+            <ContactList visibleContacts={getVisibleContacts()} />
           </div>
         </div>
       </div>
-    );
-  }
-}
+  );
+};
 
 export default App;
