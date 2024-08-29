@@ -1,32 +1,28 @@
-import { Component } from 'react';
-import PropTypes from 'prop-types';
-import Modal from '../modal';
-import css from './image-gallery-item.module.css';
+import PropTypes from "prop-types";
+import Modal from "../modal";
+import css from "./image-gallery-item.module.css";
+import { useState } from "react";
 
-class ImageGalleryItem extends Component {
+const ImageGalleryItem = ({ webformatURL, largeImageURL }) => {
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
 
-  state = {
-    isVisibleModal: false
-  }
+  const handleToggleModal = () => {
+    setIsVisibleModal((state) => !state);
+  };
 
-  handleToggleModal = () => {
-    this.setState(state => ({
-      isVisibleModal: !state.isVisibleModal
-    }));
-  }
-
-  render() {
-
-    const { isVisibleModal } = this.state;
-    const { webformatURL, largeImageURL } = this.props;
-
-    return (
-      <li className={ css.imageGalleryItem }>
-        <img className={ css.imageGalleryItemImage } src={ webformatURL } onClick={ this.handleToggleModal } alt="" />
-        { isVisibleModal && <Modal src={ largeImageURL } onClose={ this.handleToggleModal } /> }
-      </li>
-    );
-  }
+  return (
+    <li className={css.imageGalleryItem}>
+      <img
+        className={css.imageGalleryItemImage}
+        src={webformatURL}
+        onClick={handleToggleModal}
+        alt=""
+      />
+      {isVisibleModal && (
+        <Modal src={largeImageURL} onClose={handleToggleModal} />
+      )}
+    </li>
+  );
 };
 
 ImageGalleryItem.propTypes = {

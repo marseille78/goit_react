@@ -1,99 +1,79 @@
-import React, { Component } from 'react';
-import Searchbar from '../searchbar';
-import css from './app.module.css';
-import ImageGallery from '../image-gallery/image-gallery';
-import { apiService } from '../../services/api-service';
-import Loader from '../loader';
-import Button from '../button';
+import { useEffect, useState } from "react";
+import Searchbar from "../searchbar";
+import css from "./app.module.css";
+import ImageGallery from "../image-gallery/image-gallery";
+import { apiService } from "../../services/api-service";
+import Loader from "../loader";
+import Button from "../button";
 
-const IDLE = 'idle';
-const PENDING = 'pending';
-const REJECTED = 'rejected';
-const RESOLVED = 'resolved';
+const IDLE = "idle";
+const PENDING = "pending";
+const REJECTED = "rejected";
+const RESOLVED = "resolved";
 
-class App extends Component {
+const App = () => {
+  const [category, setCategory] = useState("");
+  const [activePage, setActivePage] = useState(1);
+  const [status, setStatus] = useState(IDLE);
+  const [response, setResponse] = useState([]);
+  const [error, setError] = useState(null);
+  const [totalHits, setTotalHits] = useState(null);
 
-  state = {
-    category: '',
-    activePage: 1,
-    status: IDLE,
-    response: [],
-    error: null,
-    totalHits: null,
-  }
+  useEffect(() => {
+    if (!category) return;
 
-  async componentDidUpdate(prevProps, prevState, snapshot) {
-    const prevCategory = prevState.category;
-    const nextCategory = this.state.category;
-    const prevPage = prevState.activePage;
-    const nextPage = this.state.activePage;
+    setStatus(PENDING);
 
-    const { activePage } = this.state;
+    apiService
+      .getResource(category, activePage)
+      .then(({ hits, totalHits }) => {
+        setResponse((state) => [...state, ...hits]);
+        setError(null);
+        setTotalHits(totalHits);
+        setStatus(RESOLVED);
+      })
+      .catch((error) => {
+        setError(error);
+        setStatus(REJECTED);
+      });
+  }, [category, activePage]);
 
-    if (prevCategory !== nextCategory || prevPage !== nextPage) {
-      this.setState({ status: PENDING });
+  const handleChangeCategory = (category) => {
+    setCategory(category);
+    setActivePage(1);
+    setResponse([]);
+  };
 
-      try {
-        const { hits, totalHits } = await apiService.getResource(nextCategory, activePage);
+  const handleLoadMore = () => {
+    setActivePage((state) => state + 1);
+  };
 
-        this.setState(state => ({
-          response: [...state.response, ...hits],
-          status: RESOLVED,
-          error: null,
-          totalHits,
-        }));
-      } catch (error) {
-        this.setState({ error });
-      }
-    }
-  }
+  const imageGalleryIdleView = () => (
+    <div>
+      <h2>Enter category, please</h2>
+    </div>
+  );
 
-  handleChangeCategory = (category) => {
-    this.setState({
-      category,
-      activePage: 1,
-      response: [],
-    });
-  }
+  const imageGalleryErrorView = (message) => (
+    <div>
+      <h2>{message}</h2>
+    </div>
+  );
 
-  handleLoadMore = () => {
-    this.setState(state => ({
-      activePage: state.activePage + 1,
-    }));
-  }
+  return (
+    <div className={css.app}>
+      <Searchbar onSubmit={handleChangeCategory} />
 
-  render() {
-    const { status, response, totalHits, error } = this.state;
+      {status === IDLE && imageGalleryIdleView()}
+      {status === PENDING && <Loader />}
+      {status === REJECTED && imageGalleryErrorView(error.message)}
+      <ImageGallery dataList={response} />
 
-    const imageGalleryIdleView = () => (
-      <div>
-        <h2>Enter category, please</h2>
-      </div>
-    );
-
-    const imageGalleryErrorView = (message) => (
-      <div>
-        <h2>{ message }</h2>
-      </div>
-    );
-
-    return (
-      <div className={css.app}>
-        <Searchbar onSubmit={ this.handleChangeCategory } />
-
-        { status === IDLE && imageGalleryIdleView() }
-        { status === PENDING && <Loader /> }
-        { status === REJECTED && imageGalleryErrorView(error.message) }
-        <ImageGallery dataList={ response } />
-
-        {
-          (status === RESOLVED && response.length !== totalHits && response.length !== 0) &&
-          <Button onLoadMore={ this.handleLoadMore } />
-        }
-
-      </div>
-    );
-  }
-}
+      {status === RESOLVED &&
+        response.length !== totalHits &&
+        response.length !== 0 && <Button onLoadMore={handleLoadMore} />}
+    </div>
+  );
+};
 
 export default App;
