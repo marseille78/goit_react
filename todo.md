@@ -87,3 +87,75 @@
 
 -   shouldComponentUpdate vs PureComponent
 -   refactoring
+
+### Less 2
+
+> > feef20bb6ec8430ab253f1d0367f9ccf
+
+-   http how to use
+-   architecture
+    -   search -> app -> content
+    -   validation search with react-hot-toast
+    -   componentDidUpdate in content
+    -   fetch in content
+    -   loading in content
+    -   destructuring state
+-   http errors
+-   pattern stateMachine with status['idle','pending','rejected','resolved']
+
+## Module 4
+
+### Less 1
+
+-   useState
+-   useState nothing save state
+-   useState one State = one useState
+-   useState convert class to hooks
+
+-   useEffect
+-   useEffect first render <Modal/>
+-   useEffect every render <LoginForm/>
+-   useEffect clear after render <Modal/>
+
+-   useEffect first render <ToDo/>
+-   useEffect update on any change <ToDo/>
+-   refactor with toast <ToDo/>
+
+-   edit class to huk <ContentInfo/>
+-   if return <ContentInfo/>
+-   batching in React 18
+
+### Less 2
+
+-   useReducer <Counter/>
+-   action.type
+-   action.payload
+-   dispatch
+
+-   useMemo <TestUseMemo/>
+-   complexCompute <TestUseMemo/>
+-   useEffect vs useMemo <TestUseMemo/>
+
+-   useCallback <TestUseMemo/>
+
+-   Profiler
+
+-   useContext
+-   Provider
+-   toggleState
+-   useAlert
+
+## Module 5
+
+### Less 1
+
+-   BrowserRouter <Index.js/>
+-   Routes & Route <App.js/>
+-   Link to <Header/>
+-   Outlet & nested routes <HomePage/>
+-   add <Layout/>
+-   use index
+-   add Context
+-   global save search result <Context/>
+-   PageDetails for news & users
+-   useParams
