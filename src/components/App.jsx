@@ -9,7 +9,7 @@ import HomePage from './pages/HomePage'
 
 const LoginPage = lazy(() => import('./pages/LoginPage'))
 const ToDoDetails = lazy(() => import('./ToDo/ToDoDetails'))
-const ToDoPage = lazy(() => import('./pages/ToDoPage'))
+const ToDoPage = lazy(() => import('./pages/TodoPage'))
 const NewsPage = lazy(() => import('./pages/NewsPage'))
 
 const App = () => {

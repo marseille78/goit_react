@@ -1,7 +1,7 @@
-import ToDoList from '../ToDoList/ToDoList'
+import ToDoList from '../ToDoList/ToDoList';
 
-const ToDoPage = () => {
-	return <ToDoList />
-}
+const TodoPage = () => {
+	return <ToDoList />;
+};
 
-export default ToDoPage
+export default TodoPage;

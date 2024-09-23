@@ -1,11 +1,13 @@
-import Counter from '../Counter/Counter'
+import Counter from "../Counter/Counter";
+import Step from "../Counter/Step";
 
 const HomePage = () => {
-	return (
-		<>
-			<Counter />
-		</>
-	)
-}
+  return (
+    <>
+      <Step />
+      <Counter />
+    </>
+  );
+};
 
-export default HomePage
+export default HomePage;
